@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Box,
+} from "@material-ui/core";
 
-function App() {
+import Routes from "./src/routes";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <AppBar position="fixed">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            className=""
+            color="inherit"
+            aria-label="menu"
+          ></IconButton>
+          <Typography variant="h6">Dashboard</Typography>
+        </Toolbar>
+      </AppBar>
+      <Routes />
+    </Box>
   );
 }
 
-export default App;
+const styles = {
+  rowFilter: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+  },
+};
